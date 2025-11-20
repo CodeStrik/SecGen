@@ -239,7 +239,14 @@ end
     when "virtualbox"
 %>
     <%= system.name %>.vm.box = "<%= selected_module.module_path_name %>"
-    <%= system.name %>.vm.box_url = "<%= selected_module.attributes['url'].first %>"
+        
+<% if selected_module.attributes['url'] %>
+      <% if selected_module.attributes['url'] %>
+  <%= system.name %>.vm.box_url = "<%= selected_module.attributes['url'].first %>"
+<% end %>
+    <% end %>
+
+  
 <%
   end
 %>

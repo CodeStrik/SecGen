@@ -78,7 +78,7 @@ class ProjectFilesCreator
       system.module_selections.each do |selected_module|
 
         if selected_module.module_type == 'base'
-          url = @builder_type == :vmware_iso ? selected_module.attributes['esxi_url'].first : selected_module.attributes['url'].first
+          url = @builder_type == :vmware_iso ? (selected_module.attributes['esxi_url'] || []).first : (selected_module.attributes['url'] || []).first
 
           unless url.nil? || url =~ /^http*/
             Print.std "Checking to see if local basebox #{url.split('/').last} exists"
