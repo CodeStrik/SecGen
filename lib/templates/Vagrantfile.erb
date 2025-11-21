@@ -240,10 +240,28 @@ end
 %>
     <%= system.name %>.vm.box = "<%= selected_module.module_path_name %>"
     <%= system.name %>.vm.box_check_update = false
-    # --- RED HOST-ONLY ALEATORIA ---
-    # Generamos un octeto aleatorio entre 101 y 250 para evitar conflictos
-    <%= system.name %>.vm.network "private_network", ip: "192.168.56.#{rand(101..250)}", name: "vboxnet0"
-    # -------------------------------
+    # --- INICIO DEL PARCHE DEBIAN STRETCH (ARCHIVE + GPG FIX) ---
+    <%= system.name %>.vm.provision "shell", inline: <<-SHELL
+      if grep -q "stretch" /etc/os-release; then
+        echo "Detectado Debian Stretch. Aplicando parche de repositorios y seguridad..."
+
+        # 1. Cambiar URLs a archive.debian.org
+        echo "deb http://archive.debian.org/debian/ stretch main contrib non-free" > /etc/apt/sources.list
+        echo "deb http://archive.debian.org/debian-security/ stretch/updates main contrib non-free" >> /etc/apt/sources.list
+
+        # 2. Configurar APT para ignorar TODO tipo de errores de seguridad/firmas
+        # Esto es necesario porque las llaves GPG de 2017 han caducado
+        echo 'Acquire::Check-Valid-Until "false";' > /etc/apt/apt.conf.d/99insecure
+        echo 'Acquire::AllowInsecureRepositories "true";' >> /etc/apt/apt.conf.d/99insecure
+        echo 'Acquire::AllowDowngradeToInsecureRepositories "true";' >> /etc/apt/apt.conf.d/99insecure
+        echo 'APT::Get::AllowUnauthenticated "true";' >> /etc/apt/apt.conf.d/99insecure
+
+        # 3. Actualizar lista de paquetes
+        apt-get update
+      fi
+    SHELL
+    # --- FIN DEL PARCHE ---
+
 <% if selected_module.attributes['url'] %>
       <% if selected_module.attributes['url'] %>
   <%= system.name %>.vm.box_url = "<%= selected_module.attributes['url'].first %>"
