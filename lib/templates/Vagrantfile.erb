@@ -239,7 +239,7 @@ end
     when "virtualbox"
 %>
     <%= system.name %>.vm.box = "<%= selected_module.module_path_name %>"
-        
+    <%= system.name %>.vm.box_check_update = false
 <% if selected_module.attributes['url'] %>
       <% if selected_module.attributes['url'] %>
   <%= system.name %>.vm.box_url = "<%= selected_module.attributes['url'].first %>"
@@ -331,7 +331,7 @@ end
       <%=module_name%>.environment_variables = {'RUBYOPT' => '-W0'}
       <%=module_name%>.environment = "production"
 <%    end -%>
-      <%=module_name%>.synced_folder_type = "rsync"
+      <%=module_name%>.synced_folder_type = "virtualbox"
       <%=module_name%>.manifests_path = "<%="puppet/#{system.name}/modules/#{selected_module.module_path_end}"%>"
       <%=module_name%>.manifest_file = "<%="#{selected_module.module_path_end}.pp"%>"
     end
