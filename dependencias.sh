@@ -30,7 +30,7 @@ sudo apt-get install -y \
     git curl wget build-essential \
     autoconf bison patch rustc libssl-dev libyaml-dev libreadline6-dev \
     zlib1g-dev libgmp-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev \
-    libdb-dev uuid-dev steghide
+    libdb-dev uuid-dev steghide build-essential libxml2-dev libpcap-dev libpq-dev pkg-config imagemagick libmagickwand-dev libsqlite3-dev libcurl4-openssl-dev
 
 # 2. VIRTUALBOX, VAGRANT Y RED
 echo -e "${GREEN}[2/6] Configurando Virtualización y Redes...${NC}"
