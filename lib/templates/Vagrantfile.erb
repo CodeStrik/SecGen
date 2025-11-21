@@ -240,6 +240,10 @@ end
 %>
     <%= system.name %>.vm.box = "<%= selected_module.module_path_name %>"
     <%= system.name %>.vm.box_check_update = false
+    # --- RED HOST-ONLY ALEATORIA ---
+    # Generamos un octeto aleatorio entre 101 y 250 para evitar conflictos
+    <%= system.name %>.vm.network "private_network", ip: "192.168.56.#{rand(101..250)}", name: "vboxnet0"
+    # -------------------------------
 <% if selected_module.attributes['url'] %>
       <% if selected_module.attributes['url'] %>
   <%= system.name %>.vm.box_url = "<%= selected_module.attributes['url'].first %>"
