@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<scenario xmlns="http://www.github/cliffe/SecGen/scenario"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.github/cliffe/SecGen/scenario">
+
+  <system>
+    <system_name>dvwa_stretch</system_name>
+
+    <!-- Usar la base Debian Stretch/KDE que ya tienes como box local -->
+    <base distro=".*Stretch" type="desktop" name="KDE"/>
+
+    <!-- Vulnerabilidad concreta: módulo DVWA -->
+    <vulnerability module_path=".*/dvwa" />
+
+    <!-- Red privada con DHCP en la red host-only que has creado (192.168.56.0/24) -->
+    <network type="private_network" range="dhcp"/>
+  </system>
+
+</scenario>
+
