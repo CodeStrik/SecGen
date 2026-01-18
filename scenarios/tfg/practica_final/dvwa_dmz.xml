@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+
+<scenario xmlns="http://www.github/cliffe/SecGen/scenario"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.github/cliffe/SecGen/scenario">
+
+  <system>
+    <system_name>dmz_dvwa</system_name>
+
+    <base distro=".*Stretch" type="desktop" name="KDE"/>
+
+    <vulnerability module_path=".*/web_training/dvwa" />
+    
+    <network type="private_network" range="dhcp">
+      <input into="IP_address">
+        <value>192.168.60.10</value>
+      </input>
+      <input into="intnet">
+        <value>DMZ</value>
+      </input>
+      <input into="gateway_ip">
+        <value>192.168.60.1</value>
+      </input>
+    </network>
+    
+  </system>
+
+</scenario>

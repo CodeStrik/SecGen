@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<scenario xmlns="http://www.github/cliffe/SecGen/scenario"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.github/cliffe/SecGen/scenario">
+
+  <system>
+    <system_name>lan_services</system_name>
+
+    <base distro=".*Stretch" type="desktop" name="KDE"/>
+
+    <vulnerability module_path=".*/ftp/vsftpd_234_backdoor" />
+
+    <vulnerability module_path=".*/nfs/nfs_rootshare" />
+    
+    <network type="private_network" range="dhcp">
+      <input into="IP_address">
+        <value>192.168.70.10</value>
+      </input>
+      <input into="intnet">
+        <value>LAN</value>
+      </input>
+      <input into="gateway_ip">
+        <value>192.168.70.1</value>
+      </input>
+    </network>
+
+  </system>
+
+</scenario>

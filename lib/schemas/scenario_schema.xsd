@@ -183,6 +183,8 @@
     <xs:attribute name="description" type="xs:string"/>
     <xs:attribute name="type" type="xs:string"/>
     <xs:attribute name='range' type='xs:string'/>
+    <xs:attribute name="gateway_ip" type="xs:string"/>
+
   </xs:complexType>
 
   <xs:complexType name="DatastoreType">
