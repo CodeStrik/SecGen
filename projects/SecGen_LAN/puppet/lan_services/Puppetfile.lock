@@ -1,0 +1,32 @@
+FORGE
+  remote: https://forgeapi.puppetlabs.com
+  specs:
+    puppetlabs-stdlib (5.2.0)
+
+PATH
+  remote: /home/pj/SecGen/modules/build/puppet/secgen_functions
+  specs:
+    SecGen-secgen_functions (0.0.1)
+
+PATH
+  remote: /home/pj/SecGen/modules/utilities/unix/update/unix_update
+  specs:
+    SecGen-modules_utilities_unix_update_unix_update-unix_update (0.0.1)
+
+PATH
+  remote: /home/pj/SecGen/modules/vulnerabilities/unix/ftp/vsftpd_234_backdoor
+  specs:
+    SecGen-modules_vulnerabilities_unix_ftp_vsftpd_234_backdoor-vsftpd_234_backdoor (0.0.1)
+
+PATH
+  remote: /home/pj/SecGen/modules/vulnerabilities/unix/nfs/nfs_rootshare
+  specs:
+    SecGen-modules_vulnerabilities_unix_nfs_nfs_rootshare-nfs_rootshare (0.0.1)
+
+DEPENDENCIES
+  SecGen-modules_utilities_unix_update_unix_update-unix_update (>= 0)
+  SecGen-modules_vulnerabilities_unix_ftp_vsftpd_234_backdoor-vsftpd_234_backdoor (>= 0)
+  SecGen-modules_vulnerabilities_unix_nfs_nfs_rootshare-nfs_rootshare (>= 0)
+  SecGen-secgen_functions (>= 0)
+  puppetlabs-stdlib (= 5.2.0)
+

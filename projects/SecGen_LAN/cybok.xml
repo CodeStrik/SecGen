@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<cybokmapping>
+        <CyBOK KA="MAT" topic="Attacks and exploitation">
+          <keyword>EXPLOITATION</keyword>
+          <keyword>EXPLOITATION FRAMEWORKS</keyword>
+          <keyword>BACKDOOR TROJANS</keyword>
+        </CyBOK>
+
+        <CyBOK KA="SOIM" topic="PENETRATION TESTING">
+          <keyword>PENETRATION TESTING - SOFTWARE TOOLS</keyword>
+          <keyword>PENETRATION TESTING - ACTIVE PENETRATION</keyword>
+        </CyBOK>
+
+        <CyBOK KA="NS" topic="PENETRATION TESTING">
+          <keyword>FILE - TRANSFER PROTOCOL (FTP)</keyword>
+        </CyBOK>
+      </cybokmapping>

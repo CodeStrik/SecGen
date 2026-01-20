@@ -1,0 +1,54 @@
+FORGE
+  remote: https://forgeapi.puppetlabs.com
+  specs:
+    puppet-staging (3.2.0)
+    puppetlabs-concat (5.2.0)
+      puppetlabs-stdlib (>= 4.13.1, < 6.0.0)
+      puppetlabs-translate (>= 1.0.0, < 2.0.0)
+    puppetlabs-stdlib (5.2.0)
+    puppetlabs-translate (1.2.0)
+
+PATH
+  remote: /home/pj/SecGen/modules/build/puppet/secgen_functions
+  specs:
+    SecGen-secgen_functions (0.0.1)
+
+PATH
+  remote: /home/pj/SecGen/modules/services/unix/database/mysql_stretch_compatible/mysql
+  specs:
+    SecGen-modules_services_unix_database_mysql_stretch_compatible_mysql-mysql (6.2.0)
+      puppet-staging (>= 1.0.1, < 4.0.0)
+      puppetlabs-stdlib (>= 3.2.0, < 6.0.0)
+      puppetlabs-translate (>= 1.0.0, < 2.0.0)
+
+PATH
+  remote: /home/pj/SecGen/modules/services/unix/http/apache_stretch_compatible/apache
+  specs:
+    SecGen-modules_services_unix_http_apache_stretch_compatible_apache-apache (2.0.0)
+      puppetlabs-concat (>= 2.2.1, < 5.3.0)
+      puppetlabs-stdlib (>= 4.13.1, < 5.3.0)
+
+PATH
+  remote: /home/pj/SecGen/modules/utilities/unix/puppet_module/cron_new
+  specs:
+    SecGen-modules_utilities_unix_puppet_module_cron_new-cron_new (1.3.0)
+
+PATH
+  remote: /home/pj/SecGen/modules/utilities/unix/update/unix_update
+  specs:
+    SecGen-modules_utilities_unix_update_unix_update-unix_update (0.0.1)
+
+PATH
+  remote: /home/pj/SecGen/modules/vulnerabilities/unix/web_training/dvwa
+  specs:
+    SecGen-modules_vulnerabilities_unix_web_training_dvwa-dvwa (0.0.1)
+
+DEPENDENCIES
+  SecGen-modules_services_unix_database_mysql_stretch_compatible_mysql-mysql (>= 0)
+  SecGen-modules_services_unix_http_apache_stretch_compatible_apache-apache (>= 0)
+  SecGen-modules_utilities_unix_puppet_module_cron_new-cron_new (>= 0)
+  SecGen-modules_utilities_unix_update_unix_update-unix_update (>= 0)
+  SecGen-modules_vulnerabilities_unix_web_training_dvwa-dvwa (>= 0)
+  SecGen-secgen_functions (>= 0)
+  puppetlabs-stdlib (= 5.2.0)
+
