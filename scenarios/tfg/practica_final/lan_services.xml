@@ -9,8 +9,6 @@
 
     <base distro=".*Stretch" type="desktop" name="KDE"/>
 
-    <vulnerability module_path=".*/ftp/vsftpd_234_backdoor" />
-
     <vulnerability module_path=".*/nfs/nfs_rootshare" />
     
     <network type="private_network" range="dhcp">

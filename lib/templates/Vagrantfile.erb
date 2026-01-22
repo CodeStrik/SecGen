@@ -356,6 +356,7 @@ end
       
       # Añadir la nueva ruta por defecto
       if ip route add default via <%= gateway_ip %>; then
+        :
       else
         ip route replace default via <%= gateway_ip %>
       fi
